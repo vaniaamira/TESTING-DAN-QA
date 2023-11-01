@@ -1,19 +1,14 @@
 import unittest
-class TestStringMethods(unittest.TestCase):
 
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
+def add(x, y):
+    return x + y
 
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
+class TestAddition(unittest.TestCase):
+    def test_add_positive_numbers(self):
+        self.assertEqual(add(1, 2), 3)
 
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+    def test_add_negative_numbers(self):
+        self.assertEqual(add(-1, -2), -3)
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     unittest.main()
